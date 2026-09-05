@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@theme {
+  --color-primary-header: var(--color-emerald-900, #064e3b);
+  --color-primary-action: var(--color-emerald-700, #047857);
+  --color-primary-bg: var(--color-slate-50, #f8fafc);
+}

@@ -1,0 +1,7 @@
+{
+  "name": "E-Cycle Bridge",
+  "description": "Offline-first digital platform connecting informal e-waste collectors with authorized recyclers through fair pricing, AI-assisted material identification, and traceable handovers.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
