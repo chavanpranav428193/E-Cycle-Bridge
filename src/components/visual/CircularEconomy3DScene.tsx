@@ -656,7 +656,7 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-[380px] sm:h-[460px] md:h-[520px] rounded-3xl overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-primary-header border border-emerald-500/20 shadow-2xl select-none ${className}`}
+      className={`relative w-full h-[360px] sm:h-[440px] md:h-[480px] rounded-xl overflow-hidden bg-stone-950 border border-stone-800 shadow-xs select-none ${className}`}
     >
       {/* 3D WebGL Canvas */}
       <canvas
@@ -666,23 +666,23 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
 
       {/* Top Floating Controls & Badge */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-        <div className="inline-flex items-center space-x-2 bg-slate-900/80 backdrop-blur border border-emerald-400/30 text-emerald-300 px-3 py-1 rounded-full text-xs font-semibold pointer-events-auto">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span className="font-mono text-[11px] tracking-wide">3D Circular Economy Ecosystem</span>
+        <div className="inline-flex items-center space-x-2 bg-stone-900/90 border border-stone-700 text-stone-200 px-3 py-1 rounded-lg text-xs font-medium pointer-events-auto">
+          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+          <span className="font-mono text-[11px] tracking-wide">Circular Custody Flow Model</span>
         </div>
 
         <div className="flex items-center space-x-1.5 pointer-events-auto">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
             title={isPlaying ? 'Pause Animation' : 'Resume Animation'}
-            className="p-1.5 rounded-lg bg-slate-900/80 backdrop-blur border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition cursor-pointer"
+            className="p-1.5 rounded-lg bg-stone-900/90 border border-stone-700 text-stone-300 hover:text-white hover:bg-stone-800 transition cursor-pointer"
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
           </button>
           <button
             onClick={() => setShowTooltip(!showTooltip)}
             title="Toggle Stage Info Overlay"
-            className="p-1.5 rounded-lg bg-slate-900/80 backdrop-blur border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition cursor-pointer"
+            className="p-1.5 rounded-lg bg-stone-900/90 border border-stone-700 text-stone-300 hover:text-white hover:bg-stone-800 transition cursor-pointer"
           >
             <Info className="w-3.5 h-3.5" />
           </button>
@@ -692,7 +692,7 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
       {/* Stage Sequence Navigation Bar (Bottom Center) */}
       <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-3 pointer-events-none">
         {/* Stages Pill Strip */}
-        <div className="flex items-center space-x-1 bg-slate-950/85 backdrop-blur-md p-1.5 rounded-2xl border border-slate-800 pointer-events-auto overflow-x-auto max-w-full">
+        <div className="flex items-center space-x-1 bg-stone-900/95 p-1 rounded-xl border border-stone-800 pointer-events-auto overflow-x-auto max-w-full">
           {CIRCULAR_STAGES.map((st, idx) => (
             <button
               key={st.id}
@@ -700,10 +700,10 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
                 setActiveStageIndex(idx);
                 if (onExploreStage) onExploreStage(st.id);
               }}
-              className={`px-2.5 py-1 rounded-xl text-xs font-semibold transition whitespace-nowrap cursor-pointer flex items-center space-x-1.5 ${
+              className={`px-3 py-1 rounded-lg text-xs font-semibold transition whitespace-nowrap cursor-pointer flex items-center space-x-1.5 ${
                 activeStageIndex === idx
-                  ? 'bg-emerald-600 text-white shadow-xs font-bold'
-                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
+                  ? 'bg-emerald-700 text-white shadow-xs font-bold'
+                  : 'text-stone-400 hover:text-stone-200 hover:bg-stone-800'
               }`}
             >
               <span className="text-[10px] opacity-70">0{idx + 1}</span>
@@ -714,19 +714,19 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
 
         {/* Informative Stage Highlight Card */}
         {showTooltip && currentStage && (
-          <div className="bg-slate-900/90 backdrop-blur-md border border-emerald-400/40 rounded-2xl p-3 sm:p-4 text-white max-w-xs sm:max-w-sm pointer-events-auto shadow-xl animate-fadeIn">
+          <div className="bg-stone-900/95 border border-stone-700 rounded-xl p-3 sm:p-4 text-white max-w-xs sm:max-w-sm pointer-events-auto shadow-md">
             <div className="flex items-center justify-between gap-2">
-              <span className="text-[10px] uppercase font-mono tracking-wider font-bold text-emerald-300">
+              <span className="text-[10px] uppercase font-mono tracking-wider font-semibold text-emerald-400">
                 Step 0{currentStage.step} • {currentStage.sublabel}
               </span>
-              <span className="text-[10px] font-mono bg-emerald-950 border border-emerald-500/40 text-emerald-300 px-2 py-0.5 rounded font-bold">
+              <span className="text-[10px] font-mono bg-stone-800 border border-stone-700 text-stone-300 px-2 py-0.5 rounded font-medium">
                 {currentStage.metric}
               </span>
             </div>
             <h4 className="text-sm font-bold text-white mt-1">
               {currentStage.label}
             </h4>
-            <p className="text-xs text-slate-300 mt-1 leading-relaxed line-clamp-2">
+            <p className="text-xs text-stone-300 mt-1 leading-relaxed line-clamp-2">
               {currentStage.description}
             </p>
           </div>
@@ -735,7 +735,7 @@ export const CircularEconomy3DScene: React.FC<CircularEconomy3DSceneProps> = ({
 
       {/* Subtle Hint */}
       <div className="absolute top-14 left-4 pointer-events-none hidden sm:block">
-        <span className="text-[10px] text-slate-400/80 font-mono tracking-tight">
+        <span className="text-[10px] text-stone-400 font-mono tracking-tight">
           Click stages or move mouse for parallax
         </span>
       </div>

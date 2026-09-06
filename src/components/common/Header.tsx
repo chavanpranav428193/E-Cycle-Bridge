@@ -171,45 +171,18 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Center: Live Status & Vernacular Language Selection */}
-        <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>Online • Nashik, MH</span>
+        {/* Center: Live Status & Location */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 bg-stone-100/80 px-3 py-1.5 rounded-full border border-stone-200">
+            <span className="w-2 h-2 rounded-full bg-emerald-600" />
+            <span>Nashik District, MH</span>
+            <span className="text-stone-400">•</span>
+            <span className="text-emerald-700 font-medium">Operational Hub</span>
           </div>
 
-          <div className="flex items-center gap-1.5 border-l border-slate-200 pl-5">
-            <button
-              onClick={() => handleLangSelect('mr')}
-              className={`text-xs font-medium px-2.5 py-1 rounded-full transition cursor-pointer ${
-                language === 'mr'
-                  ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 font-bold shadow-2xs'
-                  : 'text-slate-400 hover:text-slate-700'
-              }`}
-            >
-              मराठी (Marathi)
-            </button>
-            <button
-              onClick={() => handleLangSelect('hi')}
-              className={`text-xs font-medium px-2.5 py-1 rounded-full transition cursor-pointer ${
-                language === 'hi'
-                  ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 font-bold shadow-2xs'
-                  : 'text-slate-400 hover:text-slate-700'
-              }`}
-            >
-              हिंदी (Hindi)
-            </button>
-            <button
-              onClick={() => handleLangSelect('en')}
-              className={`text-xs font-medium px-2.5 py-1 rounded-full transition cursor-pointer ${
-                language === 'en'
-                  ? 'text-emerald-700 bg-emerald-50 border border-emerald-200 font-bold shadow-2xs'
-                  : 'text-slate-400 hover:text-slate-700'
-              }`}
-            >
-              English
-            </button>
-          </div>
+          <span className="text-xs font-medium text-stone-500 border border-stone-200 bg-white px-2.5 py-1 rounded-full">
+            English
+          </span>
         </div>
 
         {/* Role Navigation Switcher Tabs */}
